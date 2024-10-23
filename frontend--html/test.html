@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手势识别 Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>视频手势识别 Demo</h1>
+        <form id="upload-form">
+            <div class="form-group">
+                <label for="frame">上传视频帧（JPEG格式）:</label>
+                <input type="file" class="form-control" id="frame" accept="image/jpeg" required>
+            </div>
+            <button type="submit" class="btn btn-primary">识别手势</button>
+        </form>
+        <div id="result" class="mt-4"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#upload-form').on('submit', function(e) {
+                e.preventDefault(); // 防止默认提交
+
+                var formData = new FormData();
+                var fileInput = $('#frame')[0];
+                formData.append('frame', fileInput.files[0]);
+
+                // 发送POST请求到后端API
+                $.ajax({
+                    url: 'http://localhost:5000/predict',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        // 处理响应结果并显示
+                        let resultHtml = '<h3>识别结果:</h3><ul>';
+                        response.forEach(function(item) {
+                            resultHtml += `<li>手势: ${item.label}, 坐标: ${item.coordinates}</li>`;
+                        });
+                        resultHtml += '</ul>';
+                        $('#result').html(resultHtml);
+                    },
+                    error: function(err) {
+                        console.error(err);
+                        alert('识别失败，请重试。');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
