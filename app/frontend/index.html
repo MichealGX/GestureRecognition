@@ -1,12 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>app</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能图像识别系统</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="app"></div>
-<script src="./src/main.js" type="module"></script>
+  <!-- 顶部导航栏 -->
+  <div id="topbar">
+    <div class="app-title">智能图像识别系统</div>
+    <div class="topbar-right">
+      <img src="https://via.placeholder.com/40" alt="用户头像" class="user-img">
+      <span class="user-name">超级管理员</span>
+    </div>
+  </div>
+  
+  <!-- 侧边栏 -->
+  <div id="left">
+    <div class="left-width">
+      <div class="title"><span class="iconfont">&#128187;</span> 设备管理</div>
+      <ul class="el-menu-vertical-demo">
+        <li>检测外部设备连接</li>
+        <li>投影区域选择</li>
+      </ul>
+    </div>
+    <div class="left-width">
+      <div class="title"><span class="iconfont">&#128218;</span> 图像识别模式</div>
+      <ul class="el-menu-vertical-demo">
+        <li>选择监测模式</li>
+        <li>素材库管理</li>
+      </ul>
+    </div>
+    <div class="left-width">
+      <div class="title"><span class="iconfont">&#128100;</span> 美术资源管理</div>
+      <ul class="el-menu-vertical-demo">
+        <li>导入与管理资源</li>
+        <li>多图层效果设置</li>
+      </ul>
+    </div>
+    <div class="left-width">
+      <div class="title"><span class="iconfont">&#128202;</span> 交互效果</div>
+      <ul class="el-menu-vertical-demo">
+        <li>人机交互设置</li>
+        <li>图像识别目标定位</li>
+      </ul>
+    </div>
+    <div class="left-width">
+      <div class="title"><span class="iconfont">&#128193;</span> 文件数据库</div>
+      <ul class="el-menu-vertical-demo">
+        <li>导入展示资源</li>
+        <li>文件展示图层</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- 主内容区域 -->
+  <div class="container">
+    <h1>欢迎使用智能图像识别系统</h1>
+    <h3>功能简介：</h3>
+    <ul>
+      <li>设备管理：检测外部设备连接并选择投影区域。</li>
+      <li>图像识别模式：选择监测模式和素材库管理。</li>
+      <li>美术资源管理：导入美术资源并设置多图层效果。</li>
+      <li>交互效果：基于图像识别实现目标定位与互动效果。</li>
+      <li>文件数据库：导入并展示PPT、图片和PDF文件。</li>
+    </ul>
+  </div>
 </body>
 </html>

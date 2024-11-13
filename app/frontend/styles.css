@@ -1,0 +1,141 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Helvetica, Tahoma, Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+/* 链接样式 */
+a {
+    color: #ff962a;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #cc7a23;
+}
+
+/* 顶部导航栏 */
+#topbar {
+    position: relative;
+    background-color: #124280;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.topbar-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.topbar-right .user-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.topbar-right .user-name {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* 侧边栏 */
+#left {
+    background-color: #124280;
+    color: #fff;
+    width: 200px;
+    padding: 10px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+}
+
+.left-width {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.left-width .iconfont {
+    font-size: 20px;
+    color: #fff;
+}
+
+.left-width .title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+/* 菜单样式 */
+.el-menu-vertical-demo {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.el-menu-vertical-demo li {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #dcdcdc;
+    cursor: pointer;
+}
+
+.el-menu-vertical-demo li:hover {
+    background-color: #1b4d7d;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* 主内容区 */
+.container {
+    padding: 20px;
+    margin-left: 220px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 60px; /* 调整顶部间距以避开顶部导航栏 */
+}
+
+.container h1, .container h3 {
+    color: #124280;
+    margin-bottom: 10px;
+}
+
+.container ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.container ul li {
+    color: #ff6b6b;
+    margin-top: 5px;
+}
+
+/* 按钮样式 */
+.button-primary {
+    background-color: #ff962a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+    background-color: #cc7a23;
+}
